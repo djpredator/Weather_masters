@@ -1,0 +1,38 @@
+<mat-tab-group style="width: 1000px;">
+    
+    <mat-tab label="areaDesc">  
+        <div *ngFor="let link of alertDetails?.features">
+            <div *ngIf="link.properties.event===alertSelected" >
+        {{link.properties.areaDesc}}
+    </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Event"> 
+        <div *ngFor="let link of alertDetails?.features">
+            <div *ngIf="link.properties.event===alertSelected" >
+            {{link.properties.event}}
+            </div>
+            </div>
+       </mat-tab>
+    <mat-tab label="Headline">
+        <div *ngFor="let link of alertDetails?.features">
+            <div *ngIf="link.properties.event===alertSelected" >
+            {{link.properties.headline}}
+            </div>
+            </div>
+         </mat-tab>
+         <mat-tab label="Severity">
+            <div *ngFor="let link of alertDetails?.features">
+                <div *ngIf="link.properties.event===alertSelected" >
+                {{link.properties.severity}}
+                </div>
+                </div>
+             </mat-tab>
+
+  </mat-tab-group>
+  
+  <!-- headline -->
+
+  <!-- <mat-nav-list  *ngFor="let link of alertDetails?.features">
+    <a mat-list-item > {{link.properties.areaDesc}} </a>
+ </mat-nav-list> -->
