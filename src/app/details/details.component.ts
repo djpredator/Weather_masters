@@ -25,6 +25,7 @@ export class DetailsComponent implements OnInit {
   alertDetails:detailsModel;
   newEvent = [];
   alertSelected: string;
+  count=0
 
   constructor(private areaAlertsServices:AreaAlertsService, private activatedRoute:ActivatedRoute, private sharedservice: SharedService) { }
 
@@ -44,9 +45,14 @@ export class DetailsComponent implements OnInit {
     });
     this.areaAlertsServices.getareaAlert(this.areaCode).subscribe((response:detailsModel)=>{
       console.log("Areas ", response);
+      // if(this.alertSelected!=response.event){
+      //   alert("Event Not Found")
+      // }
       this.alertDetails = response
       console.log("Response", response)
+      
     })
+
   }
 
 }
